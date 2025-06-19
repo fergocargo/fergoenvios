@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios - FERGO Envíos</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: all 0.3s ease-in-out;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f5faff;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to right, #004080, #0066cc);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    header img {
+      height: 80px;
+      margin-bottom: 15px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    nav {
+      background: #cc0000;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 16px;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ffd700;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 30px;
+    }
+    .servicio {
+      background: white;
+      padding: 25px 25px 25px 140px; /* más espacio para emoji */
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      position: relative;
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .servicio.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .emoji {
+      position: absolute;
+      left: 5px; /* emoji más a la izquierda */
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 6rem;
+      user-select: none;
+      transition: transform 0.6s ease;
+    }
+    .servicio:hover .emoji {
+      transform: translateY(-50%) scale(1.1);
+    }
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="Captura de pantalla (68).png" alt="Logo FERGO" />
+  <h1>Servicios</h1>
+</header>
+
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="departamentos.html">Servicios</a>
+  <a href="pago.html">Pagos</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<main>
+  <h2>Nuestros Servicios</h2>
+
+  <div class="servicio">
+    <div class="emoji">🧴</div>
+    <h3>Envío de Aseo, Medicinas y Comida</h3>
+    <p>Enviamos productos esenciales para el hogar y la salud, incluyendo artículos de aseo personal, medicamentos y alimentos no perecederos con total seguridad y rapidez.</p>
+  </div>
+
+  <div class="servicio">
+    <div class="emoji">👕</div>
+    <h3>Envío de Misceláneas</h3>
+    <p>Envío de productos variados y personales, desde ropa, libros, accesorios, hasta pequeños electrodomésticos y más, asegurando un manejo cuidadoso de tus paquetes.</p>
+  </div>
+
+  <div class="servicio">
+    <div class="emoji">🔌</div>
+    <h3>Envíos de Electrodomésticos</h3>
+    <p>Envío confiable de neveras, lavadoras, cocinas, aires acondicionados y otros electrodomésticos grandes con la mejor logística y seguimiento personalizado.</p>
+  </div>
+
+  <div class="servicio">
+    <div class="emoji">🛋️</div>
+    <h3>Envíos de Muebles</h3>
+    <p>Transporte seguro y eficiente de muebles y artículos de decoración para el hogar, garantizando la integridad de cada pieza durante todo el proceso.</p>
+  </div>
+
+  <div class="servicio">
+    <div class="emoji">📱</div>
+    <h3>Envíos de Teléfonos Celulares</h3>
+    <p>Envía tus teléfonos celulares y dispositivos electrónicos con nosotros, asegurando protección, rapidez y un servicio especializado en artículos tecnológicos.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 FERGO Envíos. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+  // Animación de entrada para cada servicio
+  const servicios = document.querySelectorAll('.servicio');
+  window.addEventListener('load', () => {
+    servicios.forEach((servicio, i) => {
+      setTimeout(() => {
+        servicio.classList.add('visible');
+      }, i * 200);
+    });
+  });
+</script>
+
+</body>
+</html>

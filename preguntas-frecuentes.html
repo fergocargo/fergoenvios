@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preguntas Frecuentes - FERGO Envíos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* Banda roja arriba igual que en index */
+    .red-bar {
+      background-color: #cc0000;
+      height: 8px;
+      width: 100%;
+      border-radius: 4px 4px 0 0;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 8px rgba(204, 0, 0, 0.6);
+    }
+
+    header {
+      background: linear-gradient(to right, #004080, #0066cc);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 0 0 8px 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    header img {
+      height: 80px;
+      margin-bottom: 10px;
+      animation: fadeSlideIn 1s ease forwards;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      animation: fadeSlideIn 1.2s ease forwards;
+    }
+    nav {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: #004080;
+      font-weight: 700;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 3px;
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      border-bottom-color: #cc0000;
+      color: #cc0000;
+    }
+    h2 {
+      color: #cc0000;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      text-align: center;
+      font-weight: 900;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+      animation: fadeSlideIn 1.4s ease forwards;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      margin-bottom: 20px;
+      padding: 20px 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      animation-fill-mode: forwards;
+      animation-name: fadeSlideInUp;
+      animation-duration: 0.6s;
+      animation-timing-function: ease;
+    }
+    /* Animación escalonada para cada FAQ */
+    .faq-item:nth-child(4) { animation-delay: 0.2s; }
+    .faq-item:nth-child(5) { animation-delay: 0.35s; }
+    .faq-item:nth-child(6) { animation-delay: 0.5s; }
+    .faq-item:nth-child(7) { animation-delay: 0.65s; }
+    .faq-item:nth-child(8) { animation-delay: 0.8s; }
+
+    .faq-item:hover {
+      background-color: #e6f0ff;
+      transform: scale(1.03);
+    }
+    .faq-question {
+      font-weight: 700;
+      color: #004080;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-answer {
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #333;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      line-height: 1.6;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px; /* suficiente para contenido */
+      opacity: 1;
+    }
+    .faq-item .icon {
+      font-size: 1.5rem;
+      color: #cc0000;
+      transition: transform 0.3s ease;
+      user-select: none;
+      display: inline-block;
+      line-height: 1;
+    }
+    .faq-item.active .icon {
+      transform: rotate(45deg);
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* Animaciones */
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeSlideInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Banda roja -->
+<div class="red-bar"></div>
+
+<header>
+  <img src="Captura de pantalla (68).png" alt="Logo FERGO" />
+  <h1>Preguntas Frecuentes</h1>
+</header>
+
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="departamentos.html">Servicios</a>
+  <a href="pago.html">Pagos</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<h2>Resuelve tus dudas aquí</h2>
+
+<div class="faq-item">
+  <div class="faq-question">
+    ¿Cuánto tarda un envío en llegar a Cuba?
+    <span class="icon">+</span>
+  </div>
+  <div class="faq-answer">
+    Dependiendo del tipo de envío que elijas, el envío aéreo demora de 7 a 10 días laborales y el marítimo de 30 a 45 días laborales desde la salida de la carga del puerto.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+    ¿Qué tipo de artículos puedo enviar?
+    <span class="icon">+</span>
+  </div>
+  <div class="faq-answer">
+    Con FERGO Cargo puedes enviar todo tipo de productos, desde medicinas hasta electrodomésticos y motos.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+    ¿Cómo puedo rastrear mi paquete?
+    <span class="icon">+</span>
+  </div>
+  <div class="faq-answer">
+    En nuestra página web hay un apartado para dar seguimiento a tu paquete. También puedes escribirnos y estaremos encantados de ayudarte a rastrear tu envío.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+    ¿Puedo enviar paquetes a direcciones diferentes dentro de Cuba?
+    <span class="icon">+</span>
+  </div>
+  <div class="faq-answer">
+    Sí, en FERGO llegamos a todos los rincones de nuestro país para entregarte tu envío donde necesites.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+    ¿Puedo programar una recogida en mi domicilio?
+    <span class="icon">+</span>
+  </div>
+  <div class="faq-answer">
+    Sí, FERGO ofrece la posibilidad de recoger el paquete en todo Miami para tu mayor comodidad.
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      // Si ya está activo, cierra
+      if(item.classList.contains('active')) {
+        item.classList.remove('active');
+        return;
+      }
+      // Opcional: cerrar los demás para comportamiento acordeón
+      document.querySelectorAll('.faq-item.active').forEach(activeItem => {
+        activeItem.classList.remove('active');
+      });
+      // Abrir el clickeado
+      item.classList.add('active');
+    });
+  });
+</script>
+
+<footer>
+  &copy; 2025 FERGO Envíos. Todos los derechos reservados.
+</footer>
+
+</body>
+</html>
+

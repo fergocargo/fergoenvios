@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FERGO Envíos - Compras</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(to right, #004080, #0066cc);
+      padding: 30px 20px;
+      text-align: center;
+      color: white;
+    }
+    header img {
+      height: 80px;
+      margin-bottom: 10px;
+    }
+    header h1, header p {
+      animation: fadeSlideIn 1.2s ease forwards;
+    }
+    nav {
+      background: #cc0000;
+      padding: 15px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 16px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ffd700;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #ffd700;
+    }
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      flex-grow: 1;
+    }
+    h2.slogan {
+      font-size: 3.5rem;
+      color: #cc0000;
+      font-weight: 900;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      animation: fadeSlideIn 1.5s ease forwards;
+      text-align: center;
+    }
+    p.description {
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      animation: fadeSlideIn 1.7s ease forwards;
+      text-align: center;
+    }
+    .tiendas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px 70px;
+    }
+    .tienda {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 14px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+      max-width: 200px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .tienda:hover {
+      transform: scale(1.08);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+    .tienda img {
+      max-width: 160px;
+      height: auto;
+      margin-bottom: 20px;
+      border: 1.5px solid #ddd;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .tienda p {
+      font-size: 1.1rem;
+      color: #222;
+      margin-top: auto;
+      font-weight: 700;
+    }
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      flex-shrink: 0;
+    }
+    /* Animaciones */
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Captura de pantalla (68).png" alt="Logo FERGO" />
+    <h1>FERGO Envíos - Compras</h1>
+    <p>Compra en las mejores tiendas online con tu dirección FERGO para envíos a Cuba</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="departamentos.html">Servicios</a>
+    <a href="compras.html" class="active">Compras</a>
+    <a href="pago.html">Pagos</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+    <a href="#reseñas">Reseñas</a>
+  </nav>
+
+  <main>
+    <h2 class="slogan">Compra Fácil, Envía Seguro</h2>
+    <p class="description">
+      En FERGO te facilitamos la compra desde tiendas online reconocidas como Shein, Amazon, Temu, AliExpress, Walmart, HomeDepot e Ikea. 
+      Usa tu dirección FERGO para recibir tus productos aquí y enviarlos directamente a Cuba de manera rápida y segura.
+    </p>
+
+    <div class="tiendas">
+      <a href="https://www.shein.com" target="_blank" class="tienda" rel="noopener noreferrer" title="Visitar Shein">
+        <img src="logos/shein.png" alt="Shein Logo" />
+        <p>Shein - Moda y más</p>
+      </a>
+
+      <a href="https://www.amazon.com" target="_blank" class="tienda" rel="noopener noreferrer" title="Visitar Amazon">
+        <img src="logos/amazon.png" alt="Amazon Logo" />
+        <p>Amazon - Variedad infinita</p>
+      </a>
+
+      <a href="https://www.temu.com" target="_blank" class="tienda" rel="noopener noreferrer" title="Visitar Temu">
+        <img src="logos/temu.png" alt="Temu Logo" />
+        <p>Temu - Precios bajos</p>
+      </a>
+
+      <a href="https://www.aliexpress.com" target="_blank" class="tienda" rel="noopener noreferrer" title="Visitar AliExpress">
+        <img src="logos/aliexpress.png" alt="AliExpress Logo" />
+        <p>AliExpress - Compras globales</p>
+      </a>
+
+      <a href="https://www.walmart.com" target="_blank" class="tienda" rel="noopener noreferrer" title="Visitar Walmart">
+        <img src="logos/walmart.png" alt="Walmart Logo" />
+        <p>Walmart - Gran supermercado</p>
+      </a>
+
+      <a href="https://www.homedepot.com" target="_blank" class="tienda" rel="noopener noreferrer" title="Visitar HomeDepot">
+        <img src="logos/homedepot.png" alt="HomeDepot Logo" />
+        <p>HomeDepot - Todo para tu hogar</p>
+      </a>
+
+      <a href="https://www.ikea.com" target="_blank" class="tienda" rel="noopener noreferrer" title="Visitar Ikea">
+        <img src="logos/ikea.png" alt="Ikea Logo" />
+        <p>Ikea - Muebles y decoración</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 FERGO Envíos. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
+
+

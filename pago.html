@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pagos - FERGO Envíos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Estilos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(to right, #004080, #0066cc);
+      padding: 30px 20px;
+      text-align: center;
+      color: white;
+    }
+    nav {
+      background: #cc0000;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 16px;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ffd700;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 2.8rem;
+      color: #004080;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    .metodos-pago {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .metodo {
+      background: white;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      width: 260px;
+      transition: transform 0.3s;
+      animation: fadeInUp 1s ease forwards;
+      text-align: center;
+    }
+    .metodo:hover {
+      transform: translateY(-10px);
+    }
+    .metodo img {
+      height: 50px;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+    .metodo .emoji {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+    .metodo h3 {
+      font-size: 1.3rem;
+      color: #cc0000;
+      margin-bottom: 10px;
+    }
+    .metodo p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .boton-copiar {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #008cba;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .boton-copiar:hover {
+      background: #005f73;
+    }
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Opciones de Pago</h1>
+    <p>Rápido, seguro y conveniente</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="departamentos.html">Servicios</a>
+    <a href="pago.html">Pagos</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <main>
+    <h2>Selecciona tu método de pago preferido</h2>
+    <div class="metodos-pago">
+
+      <div class="metodo">
+        <img src="img/visa-mastercard.png" alt="Visa y Mastercard" />
+        <h3>Tarjeta (Visa/Mastercard)</h3>
+        <p>Paga en línea de forma segura con tu tarjeta de crédito o débito.</p>
+      </div>
+
+      <div class="metodo">
+        <span class="emoji">🏦</span>
+        <h3>Transferencia Bancaria</h3>
+        <p>Envíanos el pago directamente desde tu banco con total confianza.</p>
+      </div>
+
+      <div class="metodo">
+        <img src="img/zelle-logo.png" alt="Zelle" onclick="window.location.href='mailto:pagos@fergoenvios.com'" style="cursor:pointer;" />
+        <h3>Zelle</h3>
+        <p>Pago instantáneo y sin comisiones a través de Zelle.</p>
+        <button class="boton-copiar" onclick="copiarAlPortapapeles('+17862297356')">Copiar número Zelle</button>
+      </div>
+
+      <div class="metodo">
+        <img src="img/cashapp-logo.png" alt="Cash App" />
+        <h3>Cash App</h3>
+        <p>Envía tu pago al instante usando tu cuenta de Cash App.</p>
+        <button class="boton-copiar" onclick="copiarAlPortapapeles('$FergoEnvios')">Copiar $Cashtag</button>
+      </div>
+
+      <div class="metodo">
+        <a href="https://www.paypal.com" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit;">
+          <img src="img/paypal-logo.png" alt="PayPal" />
+          <h3>PayPal</h3>
+        </a>
+        <p>Utiliza tu cuenta PayPal para un pago seguro y protegido.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 FERGO Envíos. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function copiarAlPortapapeles(texto) {
+      navigator.clipboard.writeText(texto).then(() => {
+        alert('Copiado al portapapeles: ' + texto);
+      }).catch(() => {
+        alert('No se pudo copiar automáticamente. Por favor, copie manualmente: ' + texto);
+      });
+    }
+  </script>
+
+</body>
+</html>
+
+
+

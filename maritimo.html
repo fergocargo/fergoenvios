@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FERGO Envíos Marítimos a Cuba</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: white;
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 3px solid #b30000;
+    }
+    header img {
+      height: 120px;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      font-weight: 900;
+      font-size: 2rem;
+      color: #b30000;
+      letter-spacing: 2px;
+    }
+    nav {
+      background: #b30000;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(179,0,0,0.4);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: 700;
+      font-size: 16px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ffd700;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    .imagen-principal {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+      animation: fadeIn 1.8s ease forwards;
+    }
+    h2.slogan {
+      font-size: 3.2rem;
+      color: #b30000;
+      font-weight: 900;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+      animation: fadeSlideIn 1.5s ease forwards;
+    }
+    p.info {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #b30000;
+      margin-bottom: 25px;
+      animation: fadeSlideIn 1.7s ease forwards;
+    }
+    ul.ventajas {
+      list-style: none;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      text-align: left;
+      font-size: 1.1rem;
+      color: #004080;
+      padding-left: 0;
+    }
+    ul.ventajas li {
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
+    }
+    ul.ventajas li::before {
+      content: "\2714";
+      position: absolute;
+      left: 0;
+      color: #b30000;
+      font-weight: bold;
+    }
+    .btn-cotizar {
+      background-color: #b30000;
+      color: white;
+      font-weight: 700;
+      padding: 15px 40px;
+      border-radius: 35px;
+      font-size: 1.3rem;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 6px 15px rgba(179,0,0,0.5);
+      transition: background-color 0.3s ease;
+      margin-bottom: 50px;
+    }
+    .btn-cotizar:hover {
+      background-color: #7f0000;
+      box-shadow: 0 8px 18px rgba(127,0,0,0.7);
+    }
+    section.pasos {
+      background: #ffffff;
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 0 auto 60px auto;
+      text-align: left;
+    }
+    section.pasos h3 {
+      color: #b30000;
+      margin-bottom: 25px;
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    ol {
+      list-style: decimal;
+      padding-left: 25px;
+      font-size: 1.15rem;
+      color: #333;
+    }
+    ol li {
+      margin-bottom: 18px;
+    }
+    section.faq {
+      max-width: 800px;
+      margin: 0 auto 60px auto;
+      text-align: left;
+    }
+    section.faq h3 {
+      color: #b30000;
+      margin-bottom: 25px;
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .faq-item {
+      margin-bottom: 18px;
+    }
+    .faq-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #004080;
+    }
+    blockquote.testimonio {
+      max-width: 700px;
+      margin: 0 auto 60px auto;
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #b30000;
+      padding-left: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer .redes {
+      margin-bottom: 10px;
+    }
+    footer .redes a {
+      color: white;
+      margin: 0 15px;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer .redes a:hover {
+      color: #ffd700;
+    }
+    @keyframes fadeSlideIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo_fergo/fergo1.png" alt="Logo FERGO" />
+    <h1>FERGO Cargo - Envíos a Cuba</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="departamentos.html">Servicios</a>
+    <a href="compras.html">Compras</a>
+    <a href="pago.html">Pagos</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+    <a href="#reseñas">Reseñas</a>
+  </nav>
+
+  <main>
+    <img src="img/img_maritimo.png" alt="Envíos Marítimos FERGO" class="imagen-principal" />
+
+    <h2 class="slogan">Envíos marítimos ¡$1.89 la libra y nada más!</h2>
+
+    <p class="info">Son puerta a puerta, a solo $1.89 la libra con entrega incluida y aranceles de aduana en el precio. Tu familia no paga nada en Cuba.</p>
+
+    <p class="info"><strong>Tiempo de demora:</strong> Solo de 30 a 45 días hábiles.</p>
+
+    <div style="text-align: center; margin: 30px 0;">
+      <a href="https://tusitio.com/seguimiento-maritimo" target="_blank" style="text-decoration: none;">
+        <button style="background-color: #28A745; color: white; font-weight: bold; padding: 15px 30px; border: none; border-radius: 30px; font-size: 1rem; cursor: pointer; box-shadow: 0 6px 12px rgba(0,0,0,0.15);">
+          Seguimiento de mi paquete MARÍTIMO
+        </button>
+      </a>
+    </div>
+
+    <ul class="ventajas">
+      <li>Puedes enviar todo tipo de artículos sin límite de peso</li>
+      <li>Aranceles y entrega en Cuba incluidos en el precio</li>
+      <li>Servicio puerta a puerta para mayor comodidad</li>
+      <li>Seguridad garantizada en el transporte</li>
+      <li>Confianza y experiencia en envíos a Cuba</li>
+    </ul>
+
+    <a href="contacto.html" class="btn-cotizar">Cotiza tu envío ahora</a>
+
+    <section class="pasos">
+      <h3>¿Cómo enviar con FERGO?</h3>
+      <ol>
+        <li>Contacta con nuestro equipo para coordinar tu envío.</li>
+        <li>Empaqueta tus artículos sin límite de peso.</li>
+        <li>Nosotros nos encargamos de los aranceles y entrega en Cuba.</li>
+        <li>Recibe confirmación y seguimiento de tu envío.</li>
+        <li>Tu familia recibe el paquete sin pagar nada extra en Cuba.</li>
+      </ol>
+    </section>
+
+    <section class="faq">
+      <h3>Preguntas frecuentes</h3>
+      <div class="faq-item">
+        <strong>¿Qué artículos puedo enviar?</strong>
+        <p>Todo tipo de artículos personales y misceláneas, sin límite de peso.</p>
+      </div>
+      <div class="faq-item">
+        <strong>¿Cuánto tarda el envío?</strong>
+        <p>El tiempo estimado es de 30 a 45 días hábiles.</p>
+      </div>
+      <div class="faq-item">
+        <strong>¿Cuánto cuesta el envío?</strong>
+        <p>A solo $1.89 la libra con aranceles y entrega incluidos.</p>
+      </div>
+    </section>
+
+    <blockquote class="testimonio" id="reseñas">
+      "FERGO nos ayudó con un envío marítimo seguro y sin complicaciones. Muy recomendado." – Carlos M.
+    </blockquote>
+  </main>
+
+  <footer>
+    <div class="redes">
+      <a href="#" aria-label="Facebook">📘</a>
+      <a href="#" aria-label="Instagram">📸</a>
+      <a href="#" aria-label="WhatsApp">💬</a>
+    </div>
+    &copy; 2025 FERGO Cargo. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
