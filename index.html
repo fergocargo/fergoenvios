@@ -285,25 +285,26 @@
 
     <p>Ofrecemos envíos confiables y rápidos a todos los rincones de Cuba. ¡Contáctanos hoy!</p>
 
-    <div class="envios">
-      <div class="envio-tipo">
-        <a href="maritimo.html" style="text-decoration: none; color: inherit;">
-          <div class="titulo-envio">Envíos Marítimos</div>
-          <div class="icono">🚢</div>
-          <div class="precio">Precio final $1.89 la libra</div>
-          <div class="detalle">Todos los aranceles incluidos</div>
-          <p>Envíos marítimos seguros y económicos.</p>
-        </a>
-      </div>
-      <div class="envio-tipo">
-        <a href="aereo.html" style="text-decoration: none; color: inherit;">
-          <div class="titulo-envio">Envíos Aéreos</div>
-          <div class="icono">✈️</div>
-          <div class="precio">Precios desde $2.99 la libra</div>
-          <p>Envíos aéreos rápidos y confiables.</p>
-        </a>
-      </div>
-    </div>
+<div class="envios">
+  <div class="envio-tipo">
+    <a href="maritimo.html" style="text-decoration: none; color: inherit;">
+      <div class="titulo-envio">Envíos Marítimos</div>
+      <div class="icono">🚢</div>
+      <div class="precio">Precio final $1.89 la libra</div>
+      <div class="detalle">Todos los aranceles incluidos</div>
+      <p>Envíos marítimos seguros y económicos.</p>
+    </a>
+  </div>
+  <div class="envio-tipo">
+    <a href="aereo.html" style="text-decoration: none; color: inherit;">
+      <div class="titulo-envio">Envíos Aéreos</div>
+      <div class="icono">✈️</div>
+      <div class="precio">Precios desde $2.99 la libra</div>
+      <p>Envíos aéreos rápidos y confiables.</p>
+    </a>
+  </div>
+</div>
+>
 
     <section id="reseñas">
       <h2 class="slogan">Lo que dicen nuestros clientes</h2>
@@ -369,7 +370,7 @@
       if (nombre && mensaje) {
         const nuevaReseña = document.createElement('div');
         nuevaReseña.className = 'reseña';
-        nuevaReseña.innerHTML = `<p>"${mensaje}"</p><span>– ${nombre}</span>`;
+        nuevaReseña.innerHTML = <p>"${mensaje}"</p><span>– ${nombre}</span>;
         document.getElementById('lista-reseñas').appendChild(nuevaReseña);
         event.target.reset();
         alert('¡Gracias por tu reseña!');
